@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IHS</title>
     <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://use.typekit.net/mfe4mbx.css">
     <style>
         body {
             box-sizing: border-box;
@@ -16,18 +17,43 @@
 
         h1,
         h2,
-        h3,
-        p {
-            margin: 0;
+        h3 {
             color: #274976;
-            padding: 10px;
+            font-family: 'Proxima Nova';
         }
 
-        h1 {}
+        h1 {
+            padding: 40px 40px 20px;
+            font-size: 1.7rem;
+            text-transform: uppercase;
+        }
 
-        p {
+        h3 {
+            padding: 10px 40px 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+            font-size: 1rem;
+
+
+        }
+
+        p,
+        ul {
+            padding: 0px 40px 40px;
             color: white;
+            list-style-type: none;
+            font-family: 'Proxima Nova';
         }
+
+        .tilmeld_cta {
+            text-align: center;
+            font-weight: 900;
+            padding-top: 60px;
+        }
+
+
 
 
         header {
@@ -38,52 +64,112 @@
 
 
         /*** tilmelding site ***/
-        .tilmeld_section .wp-block-group__inner-container {}
+
+
+        .wp-block-group__inner-container {
+            background-color: white;
+            /*            width: 100vw;*/
+        }
 
 
         #tilmelding {
             background-color: #87A4CB;
-            padding: 10vh;
-
         }
 
         img {
-            width: 50%;
+            width: 100%;
             height: 100%;
-            /*            float: left;*/
         }
 
-        /*** footer ***/
-        footer {
-            height: 600px;
-            background-color: #274976;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        figure {
+            display: block;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+        }
+
+        a.wp-block-button__link {
+            border: 3px solid #FF7F00;
+            background-color: white;
+            color: #FF7F00;
+            width: 140px;
+            height: 20px;
+            margin: 50px auto;
+            text-decoration: none;
+            padding: 15px 10px 10px;
             text-align: center;
+            font-size: .7rem;
+            font-family: 'proxima-nova', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            display: block;
+
         }
 
-        #some_link {}
+        .tilmelding .wp-block-group__inner-container {
+            height: 250px;
+            padding: 15px 30px 10px;
 
-        #row_1,
-        #row_2 {
-            display: flex;
-            flex-direction: row;
         }
 
-        #row_1 div {
-            height: 50px;
-            width: 50px;
-            border: 4px solid #cdc6f5;
-            border-radius: 50%;
+        /*****************MEDIAQS*********/
+
+        @media(min-width: 900px) {
+
+            .tilmeld_section .wp-block-group__inner-container {
+                display: flex;
+                flex-direction: row-reverse;
+                margin-top: 50px;
+            }
+
+            .tilmelding .wp-block-group__inner-container {
+                display: block;
+                flex-basis: 50vw;
+                flex-grow: 1;
+                max-width: 50vw;
+                height: 40vw;
+                padding: 0;
+            }
+
+            figure {
+                flex-basis: 50vw;
+                flex-grow: 1;
+                /* max-width: 73vw; */
+                height: 40vw;
+            }
+
+            .tilmeld_cta {
+                padding-top: 15vw;
+                font-size: 1.5rem;
+            }
+
+            a.wp-block-button__link {
+                font-size: 1rem;
+            }
+
+            h1 {
+                padding: 100px 150px 20px;
+                font-size: 3rem;
+            }
+
+            h3,
+            p,
+            ul {
+                padding: 10px 150px 0;
+            }
+
+            h3 {
+                font-size: 1.7rem;
+            }
+
+            #tilmelding {
+                background-color: #87A4CB;
+            }
+
+
         }
 
-        #row_2 div {
-            height: 50px;
-            width: 50px;
-            border: 4px solid #cdc6f5;
-            border-radius: 50%;
-        }
     </style>
 
 
@@ -95,10 +181,13 @@
         <div id="burger"></div>
     </header>
     <main>
-        <h1></h1>
+
+
         <section id="tilmelding">
 
         </section>
+
+
 
     </main>
     <footer>
@@ -143,9 +232,12 @@
             document.querySelector("#tilmelding").innerHTML = tilmelding.content.rendered;
 
         }
+
     </script>
 
-</body></html>
+</body>
+
+</html>
 <script>
 
 
