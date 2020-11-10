@@ -7,7 +7,12 @@ document.addEventListener("DOMContentLoaded", start);
 function start() {
 
     hentData();
+
 }
+function myFunction(x) {
+            x.classList.toggle("change");
+            document.querySelector("nav").classList.toggle("hidden");
+        } //burgerm menu toggle
 
 async function hentData() {
     let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/etFag?per_page=100";

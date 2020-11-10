@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/mfe4mbx.css">
     <style>
         img {
-            width: 100%;
+            max-width: 100%;
             height: 100%;
         }
 
@@ -211,8 +211,40 @@
 
 <body>
     <header>
-        <div id="logo"><img src="" alt=""></div>
-        <div id="burger"></div>
+        <div class="headerbar">
+            <a href="forside.html" class="logo"><img src="img/logo.png"></a>
+            <div class="burger" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+        <nav class="hidden">
+            <ul>
+                <li>
+                    <a href="fag.html">Højskole</a>
+                    <ul>
+                        <li><a href="specialefag.html">Specialefag</a></li>
+                        <li><a href="idraetsfag.html">Idrætsfag</a>
+                        <li><a href="almene-fag.html">Almene fag</a></li>
+                        <li><a href="interessefag.html">Interessefag</a></li>
+                        <li><a href="faelles-fag.html">Fælles fag</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="linjer-og-kurser.html">Andre Tilbud</a>
+                </li>
+                <li>
+                    <a href="praktisk_info.html">Praktisk Information</a>
+                </li>
+                <li>
+                    <a href="om_os.html">Om IHS</a>
+                </li>
+                <li>
+                    <a href="#">Kontakt Os</a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main>
 

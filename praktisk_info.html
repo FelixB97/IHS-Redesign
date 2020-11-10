@@ -22,79 +22,7 @@
             font-family: 'Proxima Nova';
         }
 
-        header {
-            position: fixed;
-            width: 100%;
-            background-color: #FFFFFF;
-            margin-top: -40px
-        }
 
-        .headerbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #FFFFFF;
-        }
-
-        .logo {
-            margin-left: 40%;
-        }
-
-        .logo img {
-            height: 70px;
-
-        }
-
-        .burger {
-            display: inline-block;
-            cursor: pointer;
-            margin-right: 5%;
-        }
-
-        .bar1,
-        .bar2,
-        .bar3 {
-            width: 35px;
-            height: 5px;
-            background-color: #274976;
-            margin: 6px 0;
-            transition: 0.4s;
-        }
-
-        /* Rotate first bar */
-        .change .bar1 {
-            -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-            transform: rotate(-45deg) translate(-9px, 6px);
-        }
-
-        /* Fade out the second bar */
-        .change .bar2 {
-            opacity: 0;
-        }
-
-        /* Rotate last bar */
-        .change .bar3 {
-            -webkit-transform: rotate(45deg) translate(-8px, -8px);
-            transform: rotate(45deg) translate(-8px, -8px);
-        }
-
-        nav {
-            background-color: white;
-        }
-
-        ul {
-            margin-top: 0;
-        }
-
-        .hidden {
-            display: none;
-            opacity: 0;
-        }
-
-        .headerblock {
-            margin-top:40px;
-            padding-bottom: 40px;
-        }
 
         .container {
             background-color: #87A4CB;
@@ -149,7 +77,7 @@
 <body>
     <header>
         <div class="headerbar">
-            <div class="logo"><img src="img/logo.png"></div>
+            <a href="forside.html" class="logo"><img src="img/logo.png"></a>
             <div class="burger" onclick="myFunction(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
@@ -159,7 +87,7 @@
         <nav class="hidden">
             <ul>
                 <li>
-                    <a href="https://www.w3schools.com">Højskole</a>
+                    <a href="fag.html">Højskole</a>
                     <ul>
                         <li><a href="specialefag.html">Specialefag</a></li>
                         <li><a href="idraetsfag.html">Idrætsfag</a>
@@ -169,7 +97,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="https://www.w3schools.com">Andre Tilbud</a>
+                    <a href="linjer-og-kurser.html">Andre Tilbud</a>
                 </li>
                 <li>
                     <a href="praktisk_info.html">Praktisk Information</a>
@@ -178,7 +106,7 @@
                     <a href="om_os.html">Om IHS</a>
                 </li>
                 <li>
-                    <a href="https://www.w3schools.com">Kontakt Os</a>
+                    <a href="#">Kontakt Os</a>
                 </li>
             </ul>
         </nav>
@@ -270,10 +198,7 @@
         }
 
 
-        function myFunction(x) {
-            x.classList.toggle("change");
-            document.querySelector("nav").classList.toggle("hidden");
-        } //burgerm menu toggle
+
     </script>
 
 </body></html>

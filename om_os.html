@@ -13,11 +13,15 @@
         body {
             overflow-x: hidden;
         }
+        main {
+            padding-top: 50px;
+        }
 
-        img {
+        main img {
             height: 100%;
             width: 100vw;
             object-fit: cover;
+
         }
 
         h1,
@@ -118,7 +122,7 @@
         /*fold ud slut*/
         /*mediaQ*/
         @media(min-width: 900px) {
-            img {
+            main img {
                 width: 40vw;
                 object-fit: cover;
             }
@@ -150,8 +154,40 @@
 
 <body>
     <header>
-        <div id="logo"></div>
-        <div id="burger"></div>
+        <div class="headerbar">
+            <a href="forside.html" class="logo"><img src="img/logo.png"></a>
+            <div class="burger" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+        <nav class="hidden">
+            <ul>
+                <li>
+                    <a href="fag.html">Højskole</a>
+                    <ul>
+                        <li><a href="specialefag.html">Specialefag</a></li>
+                        <li><a href="idraetsfag.html">Idrætsfag</a>
+                        <li><a href="almene-fag.html">Almene fag</a></li>
+                        <li><a href="interessefag.html">Interessefag</a></li>
+                        <li><a href="faelles-fag.html">Fælles fag</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="linjer-og-kurser.html">Andre Tilbud</a>
+                </li>
+                <li>
+                    <a href="praktisk_info.html">Praktisk Information</a>
+                </li>
+                <li>
+                    <a href="om_os.html">Om IHS</a>
+                </li>
+                <li>
+                    <a href="#">Kontakt Os</a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section id="indhold">
@@ -194,7 +230,7 @@
         </div>
         <p class="footer_tekst"></p>
     </footer>
-    <!--    <script src="javascript.js"></script>-->
+    <script src="javascript.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", loadOmContent);
         document.addEventListener("DOMContentLoaded", loadOmContent2);
