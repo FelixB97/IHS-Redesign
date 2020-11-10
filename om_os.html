@@ -6,11 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IHS</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/mfe4mbx.css">
     <style>
         /*styling*/
+
+        body {
+            overflow-x: hidden;
+        }
+
+        img {
+            height: 100%;
+            width: 100vw;
+            object-fit: cover;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            font-family: 'Proxima Nova';
+        }
+
+
         .afsnit_1 {
             background-color: #274976;
-            padding: 5vw 20vw;
+            padding: 5vw 17vw;
         }
 
         .afsnit_1 p {
@@ -19,7 +39,7 @@
 
         .afsnit_2 {
             background-color: #87A4CB;
-            padding: 7vw 10vw 0;
+            padding: 5vw 7vw;
         }
 
         .afsnit_2 h2 {
@@ -33,6 +53,7 @@
 
         #indhold_2 {
             display: flex;
+            flex-wrap: wrap;
         }
 
         figure {
@@ -45,7 +66,8 @@
         }
 
         #fold_ud_section {
-            margin: 10vw 25vw;
+            margin: 10vw 10vw;
+
         }
 
         #fold_ud_section h2 {
@@ -71,32 +93,52 @@
             padding-bottom: 2vw;
         }
 
+        .container {
+            margin: 7px;
+        }
+
         /*styling slut*/
-        /*fold ud effekt*/
-        .hide {
+        /*fold ud*/
+        .hidden {
             display: none;
         }
 
-        .arrow_up_1 {
-            background-image: url(arrow_up.svg);
-            background-size: cover;
-            width: 50px;
-            height: 28.66px;
-            position: relative;
+        .pil {
+            height: 15px;
+            width: 15px;
+            padding-right: 10px;
         }
 
-        .arrow_down_1 {
-            background-image: url(arrow_down.svg);
-            background-size: cover;
-            width: 50px;
-            height: 28.66px;
-            position: relative;
-            top: 30px;
-            left: 500px;
+        /*fold ud slut*/
+        /*mediaQ*/
+        @media(min-width: 900px) {
+            img {
+                width: 40vw;
+                object-fit: cover;
+            }
 
+            #indhold_2 {
+                flex-wrap: nowrap;
+            }
         }
 
-        /*fold ud effekt slut*/
+        /*mediaQ slut*/
+        /*footer*/
+        .hoejskolerne {
+            width: 100px;
+            height: 28.19px;
+        }
+
+        .trustpilot {
+            width: 100px
+        }
+
+        footer img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /*footer slut*/
 
     </style>
 </head>
@@ -116,45 +158,40 @@
         <section id="fold_ud_section">
             <template>
                 <div class="container">
-                    <h2 class="om_os_h2"></h2>
-                    <div id="om_os_tekst" class="hide"></div>
+                    <h2 class="om_os_h2">
+                        <img src="arrow_down.svg" class="pil">
+                    </h2>
+                    <div id="om_os_tekst" class="hidden"></div>
                 </div>
             </template>
-            <div onclick="toggleContent()" id="arrow_1" class="arrow_down_1"></div>
-            <div onclick="toggleContent()" id="arrow_2" class="arrow_down_2"></div>
-            <div onclick="toggleContent()" id="arrow_3" class="arrow_down_3"></div>
-            <div onclick="toggleContent()" id="arrow_4" class="arrow_down_4"></div>
         </section>
-
     </main>
     <footer>
-        <h2>FIND OS HER</h2>
+        <h2 class="footer_cta">FIND OS HER</h2>
         <div id="some_link">
-            <div id="row_1">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div id="row_2">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+
+            <div> <a href="https://www.instagram.com/ihsdk/?hl=da"> <img src="soMeIcons/instagram.png"></a></div>
+            <div> <a href="https://www.facebook.com/IdraetshojskolenSonderborg/"> <img src="soMeIcons/facebook.png"></a></div>
+            <div> <a href="https://vimeo.com/channels/1306783"><img src="soMeIcons/vimeo.png"></a></div>
+            <div> <a href="https://www.youtube.com/channel/UC3_GXsm6rzkw2L8Ni9p5Vlw?view_as=subscriber"><img src="soMeIcons/youtube.png"></a></div>
+            <div><a href="https://www.linkedin.com/company/idraetshojskolensonderborg/"><img src="soMeIcons/linkedin.png"></a></div>
+            <div> <a href="https://www.ihs.dk/blog"><img src="soMeIcons/nyt_blogikon.svg"></a></div>
+
         </div>
+
+
         <div id="højskole_trustpilot">
-            <img src="" alt="">
-            <img src="" alt="">
+            <img class="hoejskolerne" src="hoejskolerne.png">
+            <img class="trustpilot" src="trustpilot.png">
         </div>
-        <p>
-            Idrætshøjskolen Sønderborg l Friheds allé 42 l 6400 Sønderborg l (+45) 7442 1848 l CVR 35902619 l info@ihs.dk
-            Bank: Broager Sparekasse l Reg: 9797 Konto: 0001116150 l SWIFT: BRSLDK21 l IBAN: DK2597970001116150
-        </p>
+        <p class="footer_tekst"></p>
     </footer>
     <!--    <script src="javascript.js"></script>-->
     <script>
         document.addEventListener("DOMContentLoaded", loadOmContent);
         document.addEventListener("DOMContentLoaded", loadOmContent2);
         document.addEventListener("DOMContentLoaded", loadFoldUd);
+        document.addEventListener("DOMContentLoaded", loadFooter);
 
         let omOs;
         let container = document.querySelector("#fold_ud_section");
@@ -180,6 +217,7 @@
 
         }
 
+
         async function loadFoldUd() {
             let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/posts/?categories=10";
             let jsonData = await fetch(url);
@@ -191,26 +229,38 @@
                 const klon = temp.cloneNode(true).content;
                 klon.querySelector(".om_os_h2").textContent = kategori.title.rendered;
                 klon.querySelector("#om_os_tekst").innerHTML = kategori.content.rendered;
+                klon.querySelector(".container").addEventListener("click", (e) => toggleContent(e));
 
                 container.appendChild(klon); //klones til DOM
 
             })
         }
 
+        function toggleContent(e) {
+            console.log(
+                e.target.parentElement
+            );
+            let valgt = e.target.parentElement;
 
-        function toggleContent() {
-            console.log("toggleContent");
-            document.querySelector("#om_os_tekst").classList.toggle("hide");
+            valgt.querySelector("#om_os_tekst").classList.toggle("hidden");
 
-            // her spørger jeg om #om_os_tekst har classen .hide //
-            let textErSkjult = this.classList.contains("hide");
+            let erSkjult = valgt.querySelector("#om_os_tekst").classList.contains("hidden");
+            console.log(erSkjult);
 
-            // Hvis indholdet er skjult (true) så skal #arrow have classen .arrow_down, hvis indeholde er synlig skal #arrow have classen arrow_down//
-            if (textErSkjult == true) {
-                document.querySelector("#arrow_1").classList = "arrow_down_1";
+            if (erSkjult == true) {
+                valgt.querySelector(".pil").src = "arrow_down.svg";
             } else {
-                document.querySelector("#arrow_2").classList = "arrow_up_2";
+                valgt.querySelector(".pil").src = "arrow_up.svg";
             }
+        }
+
+        async function loadFooter() {
+            let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/pages/455";
+            let jsonData = await fetch(url);
+            forsiden = await jsonData.json();
+            console.log("LOADING DONE");
+
+            document.querySelector(".footer_tekst").innerHTML = forsiden.content.rendered;
         }
 
     </script>
