@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IHS</title>
     <link rel="stylesheet" href="">
-
+    <script src=""></script>
 </head>
 <style>
     * {
@@ -25,7 +25,9 @@
         height: 15px;
         width: 15px;
         padding-right: 10px;
+
     }
+
 
     #indhold {
         max-width: 360px;
@@ -233,18 +235,41 @@
     </main>
 
 
-
     <script>
-        let almenefag;
+        let specialefag;
         let temp = document.querySelector("template");
         let container = document.querySelector("#fold-ud");
-
-        // window.addEventListener("load", sidenVises);
 
         document.addEventListener("DOMContentLoaded", loadContent);
         document.addEventListener("DOMContentLoaded", loadFoldUd);
 
+        async function loadContent() {
+            let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/pages/236";
+            let jsonData = await fetch(url);
+            specialefag = await jsonData.json();
+            console.log("LOADING DONE");
 
+            document.querySelector("#tekst-container").innerHTML = specialefag.content.rendered;
+
+        }
+
+        async function loadFoldUd() {
+            let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/posts/?categories=2";
+            let jsonData = await fetch(url);
+            specialefag = await jsonData.json();
+            console.log("LOADING DONE");
+
+            specialefag.forEach(specialefag => {
+
+                const klon = temp.cloneNode(true).content;
+                klon.querySelector(".title").innerHTML += specialefag.title.rendered;
+                klon.querySelector(".tekst").innerHTML = specialefag.content.rendered;
+                klon.querySelector(".container").addEventListener("click", (e) => toggleContent(e));
+                container.appendChild(klon); //klones til DOM
+
+            })
+
+        }
 
         function toggleContent(e) {
             console.log(
@@ -262,36 +287,6 @@
             } else {
                 valgt.querySelector(".pil").src = "arrow_up.svg";
             }
-        }
-
-        async function loadContent() {
-            let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/pages/232";
-            let jsonData = await fetch(url);
-            almenefag = await jsonData.json();
-            // console.log("LOADING DONE");
-
-            document.querySelector("#tekst-container").innerHTML = almenefag.content.rendered;
-
-        }
-
-
-        async function loadFoldUd() {
-            let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/posts/?categories=4";
-            let jsonData = await fetch(url);
-            almenefag = await jsonData.json();
-            console.log("LOADING DONE");
-
-            almenefag.forEach(almenFag => {
-
-                const klon = temp.cloneNode(true).content;
-                klon.querySelector(".title").innerHTML += almenFag.title.rendered;
-                klon.querySelector(".tekst").innerHTML = almenFag.content.rendered;
-                klon.querySelector(".container").addEventListener("click", (e) => toggleContent(e));
-                container.appendChild(klon); //klones til DOM
-
-
-            })
-
         }
     </script>
 
