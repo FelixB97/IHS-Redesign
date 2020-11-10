@@ -96,13 +96,26 @@ header {
 /* footer styling */
 
 footer {
-    height: 600px;
+    /*    height: 600px;*/
     background-color: #274976;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 
+}
+
+#some_link {
+    display: flex;
+    flex-direction: column;
+}
+
+.some_innercontainer1 {
+    display: flex;
+}
+
+.some_innercontainer2 {
+    display: flex;
 }
 
 #some_link a {
@@ -123,4 +136,10 @@ footer {
     color: #FF7F00;
     padding: 30px;
     font-size: 47px;
+}
+
+@media(min-width: 900px) {
+    #some_link {
+        flex-direction: row;
+    }
 }
