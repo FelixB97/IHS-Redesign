@@ -9,34 +9,46 @@
     <script src=""></script>
 </head>
 <style>
-    .container {
-        max-width: 1000px;
-        margin: auto;
-    }
-
-    #tekst-container h1 {
-        color: #FF7F00;
-    }
-
-    #tekst-container p {
-        color: white;
-    }
-
-
     * {
         margin: 0;
+        font-family: sans-serif;
     }
 
-    #tekst-container {
-        background-color: #274976;
-        padding: 0 25px;
-        display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-        height: 350px;
+    .hidden {
+        display: none;
 
     }
 
+    /*****FOLD UD*****/
+
+    .pil {
+        height: 15px;
+        width: 15px;
+        padding-right: 10px;
+    }
+
+    #indhold {
+        max-width: 360px;
+        margin: auto;
+        background-color: #87A4CB;
+    }
+
+    .fold-ud-content {
+        padding: 20px;
+    }
+
+
+    .title {
+        background-color: #87A4CB;
+        padding: 15px 20px;
+        max-width: 320px;
+        margin: 10px auto;
+
+    }
+
+    h2 {
+        padding-left: 20px;
+    }
 
 
     img {
@@ -45,6 +57,46 @@
         object-fit: cover;
     }
 
+    .image-container {
+        padding: 0;
+    }
+
+    /*****************/
+
+
+    #tekst-container h1 {
+        color: #FF7F00;
+        text-transform: uppercase;
+    }
+
+    #tekst-container p,
+    .container h3,
+    .container p {
+        color: white;
+    }
+
+    .container h2 {
+        color: #274976;
+        font-size: 1.3rem;
+    }
+
+    h3,
+    h2 {
+        text-transform: uppercase;
+    }
+
+
+
+    #tekst-container {
+        background-color: #274976;
+        padding: 0 25px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        height: 350px;
+        margin-bottom: 80px;
+
+    }
 
 
 
@@ -53,6 +105,21 @@
             padding: 0 80px;
             height: 300px;
         }
+
+        #indhold {
+            max-width: 460px;
+
+        }
+
+        .title {
+            max-width: 420px;
+
+        }
+
+        .fold-ud-content {
+            padding: 50px;
+        }
+
 
     }
 
@@ -79,6 +146,20 @@
             flex-basis: 800px;
         }
 
+        #indhold {
+            max-width: 660px;
+
+        }
+
+        .title {
+            max-width: 620px;
+
+        }
+
+        .fold-ud-content {
+            padding: 50px;
+        }
+
     }
 
 
@@ -90,12 +171,40 @@
 
         }
 
+        #indhold {
+            max-width: 760px;
+
+        }
+
+        .title {
+            max-width: 720px;
+
+        }
+
+        .fold-ud-content {
+            padding: 50px;
+        }
+
     }
 
     @media only screen and (min-width: 1000px) {
         #tekst-container {
             padding: 0 250px;
 
+        }
+
+        #indhold {
+            max-width: 840px;
+
+        }
+
+        .title {
+            max-width: 800px;
+
+        }
+
+        .fold-ud-content {
+            padding: 50px;
         }
 
     }
@@ -110,11 +219,15 @@
         <section id="fold-ud">
             <template>
                 <div class="container">
-                    <h2 class="title"></h2>
-                    <p class="tekst"></p>
+                    <h2 class="title">
+                        <img src="arrow_down.svg" class="pil">
+                    </h2>
 
+                    <div id="indhold" class="hidden">
+                        <p class="tekst"></p>
+
+                    </div>
                 </div>
-
             </template>
         </section>
     </main>
@@ -146,13 +259,33 @@
             interessefag.forEach(interessefag => {
 
                 const klon = temp.cloneNode(true).content;
-                klon.querySelector(".title").textContent = interessefag.title.rendered;
+                klon.querySelector(".title").innerHTML += interessefag.title.rendered;
                 klon.querySelector(".tekst").innerHTML = interessefag.content.rendered;
+                klon.querySelector(".container").addEventListener("click", (e) => toggleContent(e));
 
                 container.appendChild(klon); //klones til DOM
 
             })
 
+        }
+
+
+        function toggleContent(e) {
+            console.log(
+                e.target.parentElement
+            );
+            let valgt = e.target.parentElement;
+
+            valgt.querySelector("#indhold").classList.toggle("hidden");
+
+            let erSkjult = valgt.querySelector("#indhold").classList.contains("hidden");
+            console.log(erSkjult);
+
+            if (erSkjult == true) {
+                valgt.querySelector(".pil").src = "arrow_down.svg";
+            } else {
+                valgt.querySelector(".pil").src = "arrow_up.svg";
+            }
         }
     </script>
 
