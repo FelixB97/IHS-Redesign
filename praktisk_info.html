@@ -170,8 +170,7 @@
             <template>
                 <div class="container">
                     <div>
-                        <h2 class="praktisktitle"></h2>
-                        <img src="arrow_down.svg" class="pil">
+                        <h2 class="praktisktitle"> <img src="arrow_down.svg" class="pil"></h2>
                     </div>
                     <p class="pratisktekst hidden"></p>
                 </div>
@@ -235,13 +234,13 @@
         let temp = document.querySelector("template");
         let praktisk;
 
-        function vis(pratisk) {
+        function vis(praktisk) {
             console.log("pratiskload");
-
+            container.innerHTML = "";
             praktisk.forEach(praktisk => {
 
                 const klon = temp.cloneNode(true).content;
-                klon.querySelector(".praktisktitle").textContent = praktisk.title.rendered;
+                klon.querySelector(".praktisktitle").innerHTML = praktisk.title.rendered;
                 klon.querySelector(".pratisktekst").innerHTML = praktisk.content.rendered;
                 klon.querySelector(".container").addEventListener("click", (e) => toggleContent(e));
                 container.appendChild(klon); //klones til DOM
