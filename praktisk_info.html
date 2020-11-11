@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IHS</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/mfe4mbx.css">
     <style>
         body {
             overflow-x: hidden;
@@ -19,18 +20,15 @@
         h1,
         h2,
         h3 {
-            font-family: sans-serif;
+            font-family: 'proxima-nova';
         }
 
 
 
         .container {
             background-color: #87A4CB;
-        }
 
 
-        .container:last-child {
-            margin-bottom: 25px;
         }
 
         .container p {
@@ -82,94 +80,96 @@
         }
 
         .pil {
-        height: 15px;
-        width: 15px;
-        padding-right: 10px;
-    }
-.pil {
-        height: 15px;
-        width: 15px;
-        padding-right: 10px;
-    }
+            height: 15px;
+            width: 15px;
+            padding-right: 10px;
+        }
 
-    .fold-ud {
-        margin: 10vw auto;
-    }
+        .pil {
+            height: 15px;
+            width: 15px;
+            padding-right: 10px;
+        }
 
-    #indhold {
-        max-width: 360px;
-        margin: auto;
-        background-color: #87A4CB;
-    }
+        #fold-ud {
+            margin: 10vw auto;
+            display: block;
+            max-width: 70vw;
 
-    .fold-ud-content {
-        padding: 20px;
-    }
+        }
 
+        #indhold {
+            max-width: 70vw;
+            background-color: #87A4CB;
+            padding: 20px;
+        }
 
-    .title {
-        background-color: #87A4CB;
-        padding: 15px 20px;
-        max-width: 320px;
-        margin: 0 auto;
+        .fold-ud-content {
+            padding: 20px;
+        }
 
-    }
-
-    .container {
-        margin: 7px;
-    }
-
-    h2 {
-        padding-left: 20px;
-    }
+        .container h2 {
+                padding: 1vw 0 1vw 2vw;
+        }
 
 
-    main img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-    }
+        .container {
+            margin: 7px;
+            cursor:pointer;
+        }
 
-    .image-container {
-        padding: 0;
-    }
-
-    /*****************/
+        h2 {
+            padding-left: 20px;
+        }
 
 
-    #tekst-container h1 {
-        color: #FF7F00;
-        text-transform: uppercase;
-    }
+        main img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
 
-    #tekst-container p,
-    .container h3,
-    .container p {
-        color: white;
-    }
+        .image-container {
+            padding: 0;
+        }
 
-    .container h2 {
-        color: #274976;
-        font-size: 1.3rem;
-    }
-
-    h3,
-    h2 {
-        text-transform: uppercase;
-    }
+        /*****************/
 
 
+        #tekst-container h1 {
+            color: #FF7F00;
+            text-transform: uppercase;
+        }
 
-    #tekst-container {
-        background-color: #274976;
-        padding: 0 25px;
-        display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-        height: 350px;
-        margin-bottom: 80px;
+        #tekst-container p,
+        .container h3,
+        .container p {
+            color: white;
+        }
 
-    }
+        .container h2 {
+            color: #274976;
+            font-size: 1.3rem;
+        }
+
+        h3,
+        h2 {
+            text-transform: uppercase;
+        }
+
+
+
+        #tekst-container {
+            background-color: #274976;
+            padding: 0 25px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            height: 350px;
+            margin-bottom: 80px;
+
+        }
+
 
     </style>
 </head>
@@ -295,7 +295,7 @@
             faellesfag.forEach(faellesFag => {
 
                 const klon = temp.cloneNode(true).content;
-                klon.querySelector(".title").innerHTML += faellesFag.title.rendered;
+                klon.querySelector(".container .title").innerHTML += faellesFag.title.rendered;
                 klon.querySelector(".tekst").innerHTML = faellesFag.content.rendered;
                 klon.querySelector(".container").addEventListener("click", (e) => toggleContent(e));
 
@@ -322,9 +322,6 @@
                 valgt.querySelector(".pil").src = "arrow_up.svg";
             }
         }
-
     </script>
 
-</body>
-
-</html>
+</body></html>
