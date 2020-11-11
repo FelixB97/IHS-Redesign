@@ -113,7 +113,6 @@
             }
 
         }
-
     </style>
 </head>
 
@@ -167,8 +166,7 @@
             <template>
                 <div class="container">
                     <div>
-                        <h2 class="praktisktitle"></h2>
-                        <img src="arrow_down.svg" class="pil">
+                        <h2 class="praktisktitle"> <img src="arrow_down.svg" class="pil"></h2>
                     </div>
                     <p class="pratisktekst hidden"></p>
                 </div>
@@ -232,7 +230,7 @@
         let temp = document.querySelector("template");
         let praktisk;
 
-        function vis(pratisk) {
+        function vis(praktisk) {
             console.log("pratiskload");
 
             praktisk.forEach(praktisk => {
@@ -264,9 +262,6 @@
                 valgt.querySelector(".pil").src = "arrow_up.svg";
             }
         }
-
     </script>
 
-</body>
-
-</html>
+</body></html>
