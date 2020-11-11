@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", start);
 
 function start() {
 
-    hentData();
+    //hentData();
     loadFooter();
     document.querySelector(".hoejskole").addEventListener("click", visHoejskoleDropdown);
 }
@@ -17,15 +17,15 @@ function myFunction(x) {
     document.querySelector("nav").classList.toggle("hidden_menu");
 } //burgerm menu toggle
 
-async function hentData() {
-    let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/etFag?per_page=100";
+//async function hentData() {
+    //let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/etFag?per_page=100";
 
-    let jsonData = await fetch(url);
-    etFag = await jsonData.json();
-    console.log("hentData(json)");
-    loadGlobalContent();
-    vis(etFag);
-}
+   // let jsonData = await fetch(url);
+    //etFag = await jsonData.json();
+    //console.log("hentData(json)");
+    //loadGlobalContent();
+    //vis(etFag);
+//}
 async function loadFooter() {
     let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/pages/455";
     let jsonData = await fetch(url);

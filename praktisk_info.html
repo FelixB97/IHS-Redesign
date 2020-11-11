@@ -26,22 +26,8 @@
 
         .container {
             background-color: #87A4CB;
-            margin-left: 15px;
-            margin-right: 15px;
-            margin-top: 25px;
-            padding: 40px;
-            padding-left: 30px;
         }
 
-        .container div {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: flex-end;
-        }
-
-        .container div .pil {
-            padding-right: 10px;
-        }
 
         .container:last-child {
             margin-bottom: 25px;
@@ -95,24 +81,95 @@
             object-fit: cover;
         }
 
-        @media (min-width: 820px) {
-            #topcontent {
-                padding-left: 20vw;
-                padding-right: 20vw;
-            }
+        .pil {
+        height: 15px;
+        width: 15px;
+        padding-right: 10px;
+    }
+.pil {
+        height: 15px;
+        width: 15px;
+        padding-right: 10px;
+    }
 
-            #praktisk_info {
-                margin-left: 18vw;
-                margin-right: 18vw;
-            }
+    .fold-ud {
+        margin: 10vw auto;
+    }
 
-            #billed_container img {
-                width: 100%;
-                height: 400px;
-                object-fit: cover;
-            }
+    #indhold {
+        max-width: 360px;
+        margin: auto;
+        background-color: #87A4CB;
+    }
 
-        }
+    .fold-ud-content {
+        padding: 20px;
+    }
+
+
+    .title {
+        background-color: #87A4CB;
+        padding: 15px 20px;
+        max-width: 320px;
+        margin: 0 auto;
+
+    }
+
+    .container {
+        margin: 7px;
+    }
+
+    h2 {
+        padding-left: 20px;
+    }
+
+
+    main img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .image-container {
+        padding: 0;
+    }
+
+    /*****************/
+
+
+    #tekst-container h1 {
+        color: #FF7F00;
+        text-transform: uppercase;
+    }
+
+    #tekst-container p,
+    .container h3,
+    .container p {
+        color: white;
+    }
+
+    .container h2 {
+        color: #274976;
+        font-size: 1.3rem;
+    }
+
+    h3,
+    h2 {
+        text-transform: uppercase;
+    }
+
+
+
+    #tekst-container {
+        background-color: #274976;
+        padding: 0 25px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        height: 350px;
+        margin-bottom: 80px;
+
+    }
 
     </style>
 </head>
@@ -163,14 +220,17 @@
             <h1 id="title"></h1>
             <div id="titletekst"></div>
         </div>
-        <section id="praktisk_info">
+        <section id="fold-ud">
             <template>
                 <div class="container">
-                    <div>
-                        <h2 class="praktisktitle"></h2>
+                    <h2 class="title">
                         <img src="arrow_down.svg" class="pil">
+                    </h2>
+
+                    <div id="indhold" class="hidden">
+                        <p class="tekst"></p>
+
                     </div>
-                    <p class="pratisktekst hidden"></p>
                 </div>
             </template>
         </section>
@@ -203,8 +263,9 @@
     <script>
         let praktiskInfo;
 
-        document.addEventListener("DOMContentLoaded", loadPraktisk);
         document.addEventListener("DOMContentLoaded", loadTekst);
+        document.addEventListener("DOMContentLoaded", loadFoldUd);
+
 
 
         async function loadTekst() {
@@ -219,33 +280,30 @@
 
         }
 
-        async function loadPraktisk() {
-            let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/posts/?categories=11";
-            let json = await fetch(url);
-
-            praktisk = await json.json();
-            vis(json);
-        }
-
-
-        let container = document.querySelector("#praktisk_info");
+        let faellesfag;
         let temp = document.querySelector("template");
-        let praktisk;
+        let container = document.querySelector("#fold-ud");
 
-        function vis(pratisk) {
-            console.log("pratiskload");
-            container.innerHTML = "";
-            praktisk.forEach(praktisk => {
+
+
+        async function loadFoldUd() {
+            let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/posts/?categories=11";
+            let jsonData = await fetch(url);
+            faellesfag = await jsonData.json();
+            console.log("LOADING DONE");
+
+            faellesfag.forEach(faellesFag => {
 
                 const klon = temp.cloneNode(true).content;
-                klon.querySelector(".praktisktitle").innerHTML = praktisk.title.rendered;
-                klon.querySelector(".pratisktekst").innerHTML = praktisk.content.rendered;
+                klon.querySelector(".title").innerHTML += faellesFag.title.rendered;
+                klon.querySelector(".tekst").innerHTML = faellesFag.content.rendered;
                 klon.querySelector(".container").addEventListener("click", (e) => toggleContent(e));
+
                 container.appendChild(klon); //klones til DOM
 
             })
-        }
 
+        }
 
         function toggleContent(e) {
             console.log(
@@ -253,9 +311,9 @@
             );
             let valgt = e.target.parentElement;
 
-            valgt.querySelector(".pratisktekst").classList.toggle("hidden");
+            valgt.querySelector("#indhold").classList.toggle("hidden");
 
-            let erSkjult = valgt.querySelector(".pratisktekst").classList.contains("hidden");
+            let erSkjult = valgt.querySelector("#indhold").classList.contains("hidden");
             console.log(erSkjult);
 
             if (erSkjult == true) {
