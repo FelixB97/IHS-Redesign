@@ -9,6 +9,7 @@ h2,
 h3,
 p {
     margin: 0;
+    font-family: 'Proxima Nova';
 }
 
 main {
@@ -246,7 +247,7 @@ footer img {
 
 footer p {
     color: black;
-    padding-bottom: 40px;
+    padding: 10px 40px 40px;
 }
 
 #some_link {
