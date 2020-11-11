@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", start);
 function start() {
 
     hentData();
-
+    loadFooter();
 }
 function myFunction(x) {
             x.classList.toggle("change");
@@ -22,10 +22,15 @@ async function hentData() {
     console.log("hentData(json)");
     loadGlobalContent();
     vis(etFag);
-
-
 }
+async function loadFooter() {
+            let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/pages/455";
+            let jsonData = await fetch(url);
+            footer = await jsonData.json();
+            console.log("LOADING DONE");
 
+            document.querySelector(".footer_tekst").innerHTML = footer.content.rendered;
+        }
 function vis(data) {
     console.log(data);
 }

@@ -19,7 +19,7 @@
         h1,
         h2,
         h3 {
-            font-family: 'Proxima Nova';
+            font-family: sans-serif;
         }
 
 
@@ -30,6 +30,17 @@
             margin-right: 15px;
             margin-top: 25px;
             padding: 40px;
+            padding-left: 30px;
+        }
+
+        .container div {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        .container div .pil {
+            padding-right: 10px;
         }
 
         .container:last-child {
@@ -71,6 +82,35 @@
             padding: 40px;
             padding-right: 40px;
         }
+
+        .hidden {
+            display: none;
+
+        }
+        #billed_container img {
+                height: 200px;
+            width: 100%;
+                object-fit: cover;
+            }
+
+        @media (min-width: 820px) {
+            #topcontent {
+                padding-left: 20vw;
+                padding-right: 20vw;
+            }
+            #praktisk_info {
+                margin-left: 18vw;
+                margin-right: 18vw;
+            }
+            #billed_container img {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+            }
+
+        }
+
+
     </style>
 </head>
 
@@ -120,43 +160,46 @@
         <section id="praktisk_info">
             <template>
                 <div class="container">
-                    <h2 class="praktisktitle"></h2>
-                    <p class="pratisktekst"></p>
+                    <div>
+                        <h2 class="praktisktitle"></h2>
+                        <img src="arrow_down.svg" class="pil">
+                    </div>
+                    <p class="pratisktekst hidden"></p>
                 </div>
             </template>
         </section>
         <div id="billed_container"><img></div>
     </main>
     <footer>
-        <h2>FIND OS HER</h2>
+        <h2 class="footer_cta">FIND OS HER</h2>
         <div id="some_link">
-            <div id="row_1">
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="some_innercontainer1">
+                <div> <a href="https://www.instagram.com/ihsdk/?hl=da"> <img src="soMeIcons/instagram.png"></a></div>
+                <div> <a href="https://www.facebook.com/IdraetshojskolenSonderborg/"> <img src="soMeIcons/facebook.png"></a></div>
+                <div> <a href="https://vimeo.com/channels/1306783"><img src="soMeIcons/vimeo.png"></a></div>
             </div>
-            <div id="row_2">
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="some_innercontainer2">
+                <div> <a href="https://www.youtube.com/channel/UC3_GXsm6rzkw2L8Ni9p5Vlw?view_as=subscriber"><img src="soMeIcons/youtube.png"></a></div>
+                <div><a href="https://www.linkedin.com/company/idraetshojskolensonderborg/"><img src="soMeIcons/linkedin.png"></a></div>
+                <div> <a href="https://www.ihs.dk/blog"><img src="soMeIcons/nyt_blogikon.svg"></a></div>
             </div>
+
         </div>
+
+
         <div id="højskole_trustpilot">
-            <img src="" alt="">
-            <img src="" alt="">
+            <img class="hoejskolerne" src="hoejskolerne.png">
+            <img class="trustpilot" src="trustpilot.png">
         </div>
-        <p>
-            Idrætshøjskolen Sønderborg l Friheds allé 42 l 6400 Sønderborg l (+45) 7442 1848 l CVR 35902619 l info@ihs.dk
-            Bank: Broager Sparekasse l Reg: 9797 Konto: 0001116150 l SWIFT: BRSLDK21 l IBAN: DK2597970001116150
-        </p>
+        <p class="footer_tekst"></p>
     </footer>
     <script src="javascript.js"></script>
     <script>
         let praktiskInfo;
 
         document.addEventListener("DOMContentLoaded", loadPraktisk);
-
         document.addEventListener("DOMContentLoaded", loadTekst);
+
 
         async function loadTekst() {
             let url2 = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/pages/404?_embed";
@@ -191,14 +234,29 @@
                 const klon = temp.cloneNode(true).content;
                 klon.querySelector(".praktisktitle").textContent = praktisk.title.rendered;
                 klon.querySelector(".pratisktekst").innerHTML = praktisk.content.rendered;
-
+                klon.querySelector(".container").addEventListener("click", (e) => toggleContent(e));
                 container.appendChild(klon); //klones til DOM
 
             })
         }
 
+        function toggleContent(e) {
+            console.log(
+                e.target.parentElement
+            );
+            let valgt = e.target.parentElement;
 
+            valgt.querySelector(".pratisktekst").classList.toggle("hidden");
 
+            let erSkjult = valgt.querySelector(".pratisktekst").classList.contains("hidden");
+            console.log(erSkjult);
+
+            if (erSkjult == true) {
+                valgt.querySelector(".pil").src = "arrow_down.svg";
+            } else {
+                valgt.querySelector(".pil").src = "arrow_up.svg";
+            }
+        }
     </script>
 
 </body></html>
