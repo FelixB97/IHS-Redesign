@@ -14,6 +14,7 @@ p {
 main {
     margin-top: 40px;
 }
+
 /* Header styling */
 
 header {
@@ -22,7 +23,9 @@ header {
     position: fixed;
     width: 100%;
     background-color: #FFFFFF;
-    margin-top: -40px
+    margin-top: -40px;
+    z-index: 1;
+
 }
 
 .headerbar {
@@ -182,9 +185,28 @@ footer {
 
 }
 
+footer img {
+    width: 100%;
+    height: 100%;
+}
+
+footer p {
+    color: black;
+    padding-bottom: 40px;
+}
+
 #some_link {
     display: flex;
     flex-direction: column;
+}
+
+.hoejskolerne {
+    width: 100px;
+    height: 28.19px;
+}
+
+.trustpilot {
+    width: 100px
 }
 
 .some_innercontainer1 {
