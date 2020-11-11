@@ -28,6 +28,16 @@ header {
 
 }
 
+header a,
+header li {
+    font-family: 'proxima-nova', sans-serif;
+    font-weight: bold;
+    color: #274976;
+    text-decoration: none;
+    /*    text-align: center;*/
+
+}
+
 .headerbar {
     display: flex;
     justify-content: space-between;
@@ -84,9 +94,11 @@ nav {
 
 ul {
     margin-top: 0;
+    list-style-type: none;
+    width: 100vw;
 }
 
-.hidden {
+.hidden_menu {
     display: none;
     opacity: 0;
 }
@@ -94,6 +106,48 @@ ul {
 .headerblock {
     margin-top: 40px;
     padding-bottom: 40px;
+}
+
+@media(min-width: 900px) {
+    .burger {
+        display: none;
+    }
+
+    .hidden_menu {
+        display: flex;
+        opacity: 1;
+        height: 10px;
+    }
+
+    .logo {
+        margin: 10px 50px;
+    }
+
+    #menu {
+        margin: -35px 10vw;
+        width: 90vw;
+        display: flex;
+    }
+
+    #menu li {
+        width: 200px;
+    }
+
+    .hoejskole_dropdown li {
+        background-color: white;
+        padding: 10px;
+    }
+
+    .hide_hoejskole_dropdown {
+        display: none;
+    }
+
+    header a,
+    header li {
+        text-align: center;
+    }
+
+
 }
 
 /*forside styling*/

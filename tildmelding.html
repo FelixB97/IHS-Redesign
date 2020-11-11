@@ -169,6 +169,7 @@
 
 
         }
+
     </style>
 
 
@@ -183,12 +184,14 @@
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
+
         </div>
-        <nav class="hidden">
-            <ul>
+
+        <nav class="hidden_menu">
+            <ul id="menu">
                 <li>
-                    <a href="fag.html">Højskole</a>
-                    <ul>
+                    <a class="hoejskole" href="#">Højskole</a>
+                    <ul class="hoejskole_dropdown hide_hoejskole_dropdown">
                         <li><a href="specialefag.html">Specialefag</a></li>
                         <li><a href="idraetsfag.html">Idrætsfag</a>
                         <li><a href="almene-fag.html">Almene fag</a></li>
@@ -197,7 +200,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="linjer-og-kurser.html">Andre Tilbud</a>
+                    <a href="#">Andre Tilbud</a>
                 </li>
                 <li>
                     <a href="praktisk_info.html">Praktisk Information</a>
@@ -210,6 +213,7 @@
                 </li>
             </ul>
         </nav>
+
     </header>
     <main>
 
@@ -264,9 +268,12 @@
             document.querySelector("#tilmelding").innerHTML = tilmelding.content.rendered;
 
         }
+
     </script>
 
-</body></html>
+</body>
+
+</html>
 <script>
 
 
