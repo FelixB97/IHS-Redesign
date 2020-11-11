@@ -134,10 +134,13 @@ ul {
         width: 200px;
     }
 
-    .hoejskole_dropdown li {
+    .hoejskole_dropdown li,
+    .andre_tilbud_dropdown li {
         background-color: white;
         padding: 10px;
     }
+
+
 
     .hide_hoejskole_dropdown {
         display: none;

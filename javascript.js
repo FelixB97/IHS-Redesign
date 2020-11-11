@@ -5,11 +5,17 @@ function start() {
     hentData();
     loadFooter();
     document.querySelector(".hoejskole").addEventListener("click", visHoejskoleDropdown);
+    document.querySelector(".andre_tilbud").addEventListener("click", visAndreTilbudDropdown);
 }
 
 function visHoejskoleDropdown() {
 
     document.querySelector(".hoejskole_dropdown").classList.toggle("hide_hoejskole_dropdown");
+}
+
+function visAndreTilbudDropdown() {
+
+    document.querySelector(".andre_tilbud_dropdown").classList.toggle("hide_hoejskole_dropdown");
 }
 
 function myFunction(x) {
