@@ -42,10 +42,10 @@ function toggleAndreTilbudMenu() {
     let erSkjult = document.querySelector(".andre_tilbud_dropdown").classList.contains("hide_hoejskole_dropdown");
 
     if (erSkjult == true) {
-        document.querySelector(".andre_tilbud img").src = "arrow_up_orange.svg";
+        document.querySelector(".andre_tilbud img").src = "arrow_down_orange.svg";
 
     } else {
-        document.querySelector(".andre_tilbud img").src = "arrow_down_orange.svg";
+        document.querySelector(".andre_tilbud img").src = "arrow_up_orange.svg";
     }
 
 }
