@@ -196,7 +196,8 @@ ul {
         width: 150px;
     }
 
-    .hoejskole_dropdown {
+    .hoejskole_dropdown,
+    .andre_tilbud_dropdown {
         margin: 18px 38px;
     }
 
