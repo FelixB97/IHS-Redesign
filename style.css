@@ -6,7 +6,13 @@ body {
 
 h1,
 h2,
-h3,
+h3 {
+    margin: 0;
+    font-family: vinyl, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 p {
     margin: 0;
     font-family: 'Proxima Nova';
@@ -394,7 +400,11 @@ footer p {
 }
 
 .footer_cta {
-    font-family: 'Proxima-Nova';
+    font-family: vinyl, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    text-transform: uppercase;
     color: #FF7F00;
     padding: 30px;
     font-size: 47px;
