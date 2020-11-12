@@ -162,7 +162,7 @@ ul {
     display: none;
 }
 
-@media(min-width: 900px) {
+@media(min-width: 1200px) {
     .burger {
         display: none;
     }
@@ -182,7 +182,7 @@ ul {
     }
 
     #menu {
-        margin: -45px 8vw;
+        margin: -57px 11vw;
         width: 80vw;
         display: flex;
     }
@@ -235,8 +235,8 @@ ul {
     }
 
     .menu_bredde {
-        width: 200px;
-        padding: 10px;
+        width: 147px;
+        padding: 20px;
     }
 
     .specialefag:hover .specialefag_dropdown,
@@ -254,11 +254,11 @@ ul {
     }
 
     .hoejskole img {
-        margin: -12px 140px;
+        margin: -12px 112px;
     }
 
     .andre_tilbud img {
-        margin: -12px 159px;
+        margin: -12px 130px
     }
 
     .arrow_right_orange {
