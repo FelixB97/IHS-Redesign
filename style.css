@@ -9,11 +9,147 @@ h2,
 h3,
 p {
     margin: 0;
+    font-family: 'Proxima Nova';
 }
+
+main {
+    margin-top: 40px;
+}
+
+/* Header styling */
 
 header {
     height: 70px;
     background-color: white;
+    position: fixed;
+    width: 100%;
+    background-color: #FFFFFF;
+    margin-top: -40px;
+    z-index: 1;
+
+}
+
+header a,
+header li {
+    font-family: 'proxima-nova', sans-serif;
+    font-weight: bold;
+    color: #274976;
+    text-decoration: none;
+    /*    text-align: center;*/
+
+}
+
+.headerbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+.logo {
+    margin-left: 40%;
+}
+
+.logo img {
+    height: 70px;
+    cursor: pointer;
+
+}
+
+.burger {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5%;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #274976;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+nav {
+    background-color: white;
+}
+
+ul {
+    margin-top: 0;
+    list-style-type: none;
+    width: 100vw;
+}
+
+.hidden_menu {
+    display: none;
+    opacity: 0;
+}
+
+.headerblock {
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+@media(min-width: 900px) {
+    .burger {
+        display: none;
+    }
+
+    .hidden_menu {
+        display: flex;
+        opacity: 1;
+        height: 10px;
+    }
+
+    .logo {
+        margin: 10px 50px;
+    }
+
+    #menu {
+        margin: -35px 10vw;
+        width: 90vw;
+        display: flex;
+    }
+
+    #menu li {
+        width: 200px;
+    }
+
+    .hoejskole_dropdown li,
+    .andre_tilbud_dropdown li {
+        background-color: white;
+        padding: 10px;
+    }
+
+    .hide_hoejskole_dropdown {
+        display: none;
+    }
+
+    header a,
+    header li {
+        text-align: center;
+    }
+
+
 }
 
 /*forside styling*/
@@ -96,13 +232,45 @@ header {
 /* footer styling */
 
 footer {
-    height: 600px;
+    /*    height: 600px;*/
     background-color: #274976;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 
+}
+
+footer img {
+    width: 100%;
+    height: 100%;
+}
+
+footer p {
+    color: black;
+    padding: 10px 40px 40px;
+}
+
+#some_link {
+    display: flex;
+    flex-direction: column;
+}
+
+.hoejskolerne {
+    width: 100px;
+    height: 28.19px;
+}
+
+.trustpilot {
+    width: 100px
+}
+
+.some_innercontainer1 {
+    display: flex;
+}
+
+.some_innercontainer2 {
+    display: flex;
 }
 
 #some_link a {
@@ -119,8 +287,14 @@ footer {
 }
 
 .footer_cta {
-    font-family: Proxima Nova;
+    font-family: 'Proxima-Nova';
     color: #FF7F00;
     padding: 30px;
     font-size: 47px;
+}
+
+@media(min-width: 900px) {
+    #some_link {
+        flex-direction: row;
+    }
 }

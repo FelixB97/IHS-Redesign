@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IHS</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <style>
@@ -27,6 +27,10 @@
         padding-right: 10px;
     }
 
+    .fold-ud {
+        margin: 10vw auto;
+    }
+
     #indhold {
         max-width: 360px;
         margin: auto;
@@ -42,8 +46,12 @@
         background-color: #87A4CB;
         padding: 15px 20px;
         max-width: 320px;
-        margin: 10px auto;
+        margin: 0 auto;
 
+    }
+
+    .container {
+        margin: 7px;
     }
 
     h2 {
@@ -51,7 +59,7 @@
     }
 
 
-    img {
+    main img {
         width: 100%;
         height: 400px;
         object-fit: cover;
@@ -178,7 +186,6 @@
 
         .title {
             max-width: 720px;
-
         }
 
         .fold-ud-content {
@@ -211,7 +218,52 @@
 </style>
 
 <body>
+    <header>
+        <div class="headerbar">
+            <a href="forside.html" class="logo"><img src="img/logo.png"></a>
+            <div class="burger" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
 
+        </div>
+
+        <nav class="hidden_menu">
+            <ul id="menu">
+                <li>
+                    <a class="hoejskole" href="#">Højskole</a>
+                    <ul class="hoejskole_dropdown hide_hoejskole_dropdown">
+                        <li><a href="specialefag.html">Specialefag</a></li>
+                        <li><a href="idraetsfag.html">Idrætsfag</a>
+                        <li><a href="almene-fag.html">Almene fag</a></li>
+                        <li><a href="interessefag.html">Interessefag</a></li>
+                        <li><a href="faelles-fag.html">Fælles fag</a></li>
+                        <li><a href="linjer-og-kurser.html">Linjer og kurser</a></li>
+                        <li><a href="rejser.html">Rejser</a></li>
+                        <li><a href="tildmelding.html">Priser og tilmelding</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="andre_tilbud" href="#">Andre Tilbud</a>
+                    <ul class="andre_tilbud_dropdown hide_hoejskole_dropdown">
+                        <li><a href="#">Ugekurser</a></li>
+                        <li><a href="#">Erhverv</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="praktisk_info.html">Praktisk Information</a>
+                </li>
+                <li>
+                    <a href="om_os.html">Om IHS</a>
+                </li>
+                <li>
+                    <a href="#">Kontakt Os</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
     <main>
         <section id="tekst-container">
         </section>
@@ -231,9 +283,30 @@
             </template>
         </section>
     </main>
+    <footer>
+        <h2 class="footer_cta">FIND OS HER</h2>
+        <div id="some_link">
+            <div class="some_innercontainer1">
+                <div> <a href="https://www.instagram.com/ihsdk/?hl=da"> <img src="soMeIcons/instagram.png"></a></div>
+                <div> <a href="https://www.facebook.com/IdraetshojskolenSonderborg/"> <img src="soMeIcons/facebook.png"></a></div>
+                <div> <a href="https://vimeo.com/channels/1306783"><img src="soMeIcons/vimeo.png"></a></div>
+            </div>
+            <div class="some_innercontainer2">
+                <div> <a href="https://www.youtube.com/channel/UC3_GXsm6rzkw2L8Ni9p5Vlw?view_as=subscriber"><img src="soMeIcons/youtube.png"></a></div>
+                <div><a href="https://www.linkedin.com/company/idraetshojskolensonderborg/"><img src="soMeIcons/linkedin.png"></a></div>
+                <div> <a href="https://www.ihs.dk/blog"><img src="soMeIcons/nyt_blogikon.svg"></a></div>
+            </div>
+
+        </div>
 
 
-
+        <div id="højskole_trustpilot">
+            <img class="hoejskolerne" src="hoejskolerne.png">
+            <img class="trustpilot" src="trustpilot.png">
+        </div>
+        <p class="footer_tekst"></p>
+    </footer>
+    <script src="javascript.js"></script>
     <script>
         let almenefag;
         let temp = document.querySelector("template");

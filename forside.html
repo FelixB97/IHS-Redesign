@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/mfe4mbx.css">
     <style>
-        img {
+        main img {
             width: 100%;
             height: 100%;
         }
@@ -25,11 +25,15 @@
             color: #274976;
             padding: 40px 40px 0;
             font-family: 'Proxima Nova';
+            font-size: 1.7rem;
+            text-transform: uppercase;
         }
 
         .overskrift2 {
             padding: 40px 40px 0;
             font-family: 'Proxima Nova';
+            font-size: 1.7rem;
+            text-transform: uppercase;
         }
 
         .group1 {
@@ -58,7 +62,7 @@
             font-family: 'Proxima Nova';
         }
 
-        a {
+        main a {
             border: 3px solid #FF7F00;
             background-color: white;
             color: #FF7F00;
@@ -142,14 +146,7 @@
 
         /*************************************FOOTER***/
 
-        .hoejskolerne {
-            width: 100px;
-            height: 28.19px;
-        }
 
-        .trustpilot {
-            width: 100px
-        }
 
 
 
@@ -180,11 +177,13 @@
             }
 
             .overskrift1 {
-                padding: 70px 100px 0;
+                /*                padding: 70px 100px 0;*/
+                padding: 70px 150px 20px;
             }
 
             .group1 p {
-                padding: 10px 100px 70px;
+                /*                padding: 10px 100px 70px;*/
+                padding: 10px 150px 70px;
             }
 
             .knapper {
@@ -193,7 +192,7 @@
                 margin: 70px auto;
             }
 
-            a {
+            main a {
                 font-size: 1rem;
                 width: 184px;
                 height: 30px;
@@ -205,8 +204,50 @@
 
 <body>
     <header>
-        <div id="logo"><img src="" alt=""></div>
-        <div id="burger"></div>
+        <div class="headerbar">
+            <a href="forside.html" class="logo"><img src="img/logo.png"></a>
+            <div class="burger" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+
+        </div>
+
+        <nav class="hidden_menu">
+            <ul id="menu">
+                <li>
+                    <a class="hoejskole" href="#">Højskole</a>
+                    <ul class="hoejskole_dropdown hide_hoejskole_dropdown">
+                        <li><a href="specialefag.html">Specialefag</a></li>
+                        <li><a href="idraetsfag.html">Idrætsfag</a>
+                        <li><a href="almene-fag.html">Almene fag</a></li>
+                        <li><a href="interessefag.html">Interessefag</a></li>
+                        <li><a href="faelles-fag.html">Fælles fag</a></li>
+                        <li><a href="linjer-og-kurser.html">Linjer og kurser</a></li>
+                        <li><a href="rejser.html">Rejser</a></li>
+                        <li><a href="tildmelding.html">Priser og tilmelding</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="andre_tilbud" href="#">Andre Tilbud</a>
+                    <ul class="andre_tilbud_dropdown hide_hoejskole_dropdown">
+                        <li><a href="#">Ugekurser</a></li>
+                        <li><a href="#">Erhverv</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="praktisk_info.html">Praktisk Information</a>
+                </li>
+                <li>
+                    <a href="om_os.html">Om IHS</a>
+                </li>
+                <li>
+                    <a href="#">Kontakt Os</a>
+                </li>
+            </ul>
+        </nav>
+
     </header>
     <main>
 
@@ -227,13 +268,16 @@
     <footer>
         <h2 class="footer_cta">FIND OS HER</h2>
         <div id="some_link">
-
-            <div> <a href="https://www.instagram.com/ihsdk/?hl=da"> <img src="soMeIcons/instagram.png"></a></div>
-            <div> <a href="https://www.facebook.com/IdraetshojskolenSonderborg/"> <img src="soMeIcons/facebook.png"></a></div>
-            <div> <a href="https://vimeo.com/channels/1306783"><img src="soMeIcons/vimeo.png"></a></div>
-            <div> <a href="https://www.youtube.com/channel/UC3_GXsm6rzkw2L8Ni9p5Vlw?view_as=subscriber"><img src="soMeIcons/youtube.png"></a></div>
-            <div><a href="https://www.linkedin.com/company/idraetshojskolensonderborg/"><img src="soMeIcons/linkedin.png"></a></div>
-            <div> <a href="https://www.ihs.dk/blog"><img src="soMeIcons/nyt_blogikon.svg"></a></div>
+            <div class="some_innercontainer1">
+                <div> <a href="https://www.instagram.com/ihsdk/?hl=da"> <img src="soMeIcons/instagram.png"></a></div>
+                <div> <a href="https://www.facebook.com/IdraetshojskolenSonderborg/"> <img src="soMeIcons/facebook.png"></a></div>
+                <div> <a href="https://vimeo.com/channels/1306783"><img src="soMeIcons/vimeo.png"></a></div>
+            </div>
+            <div class="some_innercontainer2">
+                <div> <a href="https://www.youtube.com/channel/UC3_GXsm6rzkw2L8Ni9p5Vlw?view_as=subscriber"><img src="soMeIcons/youtube.png"></a></div>
+                <div><a href="https://www.linkedin.com/company/idraetshojskolensonderborg/"><img src="soMeIcons/linkedin.png"></a></div>
+                <div> <a href="https://www.ihs.dk/blog"><img src="soMeIcons/nyt_blogikon.svg"></a></div>
+            </div>
 
         </div>
 
@@ -258,7 +302,7 @@
 
             document.querySelector("#indhold").innerHTML = forsiden.content.rendered;
             loadGalleri();
-            loadFooter();
+
         }
 
         async function loadGalleri() {
@@ -268,15 +312,6 @@
             console.log("LOADING DONE");
 
             document.querySelector("#galleri").innerHTML = forsiden.content.rendered;
-        }
-
-        async function loadFooter() {
-            let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/pages/455";
-            let jsonData = await fetch(url);
-            forsiden = await jsonData.json();
-            console.log("LOADING DONE");
-
-            document.querySelector(".footer_tekst").innerHTML = forsiden.content.rendered;
         }
     </script>
 </body></html>

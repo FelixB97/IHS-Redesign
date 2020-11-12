@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IHS</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/mfe4mbx.css">
     <style>
         body {
             overflow-x: hidden;
@@ -19,93 +20,15 @@
         h1,
         h2,
         h3 {
-            font-family: 'Proxima Nova';
+            font-family: 'proxima-nova';
         }
 
-        header {
-            position: fixed;
-            width: 100%;
-            background-color: #FFFFFF;
-            margin-top: -40px
-        }
 
-        .headerbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #FFFFFF;
-        }
-
-        .logo {
-            margin-left: 40%;
-        }
-
-        .logo img {
-            height: 70px;
-
-        }
-
-        .burger {
-            display: inline-block;
-            cursor: pointer;
-            margin-right: 5%;
-        }
-
-        .bar1,
-        .bar2,
-        .bar3 {
-            width: 35px;
-            height: 5px;
-            background-color: #274976;
-            margin: 6px 0;
-            transition: 0.4s;
-        }
-
-        /* Rotate first bar */
-        .change .bar1 {
-            -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-            transform: rotate(-45deg) translate(-9px, 6px);
-        }
-
-        /* Fade out the second bar */
-        .change .bar2 {
-            opacity: 0;
-        }
-
-        /* Rotate last bar */
-        .change .bar3 {
-            -webkit-transform: rotate(45deg) translate(-8px, -8px);
-            transform: rotate(45deg) translate(-8px, -8px);
-        }
-
-        nav {
-            background-color: white;
-        }
-
-        ul {
-            margin-top: 0;
-        }
-
-        .hidden {
-            display: none;
-            opacity: 0;
-        }
-
-        .headerblock {
-            margin-top:40px;
-            padding-bottom: 40px;
-        }
 
         .container {
             background-color: #87A4CB;
-            margin-left: 15px;
-            margin-right: 15px;
-            margin-top: 25px;
-            padding: 40px;
-        }
 
-        .container:last-child {
-            margin-bottom: 25px;
+
         }
 
         .container p {
@@ -143,33 +66,153 @@
             padding: 40px;
             padding-right: 40px;
         }
+
+
+        .hidden {
+            display: none;
+
+        }
+
+        #billed_container img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .pil {
+            height: 15px;
+            width: 15px;
+            padding-right: 10px;
+        }
+
+        .pil {
+            height: 15px;
+            width: 15px;
+            padding-right: 10px;
+        }
+
+        #fold-ud {
+            margin: 10vw auto;
+            display: block;
+            max-width: 70vw;
+
+        }
+
+        #indhold {
+            max-width: 70vw;
+            background-color: #87A4CB;
+            padding: 20px;
+        }
+
+        .fold-ud-content {
+            padding: 20px;
+        }
+
+        .container h2 {
+                padding: 1vw 0 1vw 2vw;
+        }
+
+
+        .container {
+            margin: 7px;
+            cursor:pointer;
+        }
+
+        h2 {
+            padding-left: 20px;
+        }
+
+
+        main img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .image-container {
+            padding: 0;
+        }
+
+        /*****************/
+
+
+        #tekst-container h1 {
+            color: #FF7F00;
+            text-transform: uppercase;
+        }
+
+        #tekst-container p,
+        .container h3,
+        .container p {
+            color: white;
+        }
+
+        .container h2 {
+            color: #274976;
+            font-size: 1.3rem;
+        }
+
+        h3,
+        h2 {
+            text-transform: uppercase;
+        }
+
+
+
+        #tekst-container {
+            background-color: #274976;
+            padding: 0 25px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            height: 350px;
+            margin-bottom: 80px;
+
+        }
+
+        @media (min-width: 800px) {
+            #topcontent {
+                padding-left: 15vw;
+                padding-right: 15vw;
+            }
+        }
+
     </style>
 </head>
 
 <body>
     <header>
         <div class="headerbar">
-            <div class="logo"><img src="img/logo.png"></div>
+            <a href="forside.html" class="logo"><img src="img/logo.png"></a>
             <div class="burger" onclick="myFunction(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
+
         </div>
-        <nav class="hidden">
-            <ul>
+
+        <nav class="hidden_menu">
+            <ul id="menu">
                 <li>
-                    <a href="https://www.w3schools.com">Højskole</a>
-                    <ul>
+                    <a class="hoejskole" href="#">Højskole</a>
+                    <ul class="hoejskole_dropdown hide_hoejskole_dropdown">
                         <li><a href="specialefag.html">Specialefag</a></li>
                         <li><a href="idraetsfag.html">Idrætsfag</a>
                         <li><a href="almene-fag.html">Almene fag</a></li>
                         <li><a href="interessefag.html">Interessefag</a></li>
                         <li><a href="faelles-fag.html">Fælles fag</a></li>
+                        <li><a href="linjer-og-kurser.html">Linjer og kurser</a></li>
+                        <li><a href="rejser.html">Rejser</a></li>
+                        <li><a href="tildmelding.html">Priser og tilmelding</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="https://www.w3schools.com">Andre Tilbud</a>
+                    <a class="andre_tilbud" href="#">Andre Tilbud</a>
+                    <ul class="andre_tilbud_dropdown hide_hoejskole_dropdown">
+                        <li><a href="#">Ugekurser</a></li>
+                        <li><a href="#">Erhverv</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="praktisk_info.html">Praktisk Information</a>
@@ -178,7 +221,7 @@
                     <a href="om_os.html">Om IHS</a>
                 </li>
                 <li>
-                    <a href="https://www.w3schools.com">Kontakt Os</a>
+                    <a href="#">Kontakt Os</a>
                 </li>
             </ul>
         </nav>
@@ -189,46 +232,53 @@
             <h1 id="title"></h1>
             <div id="titletekst"></div>
         </div>
-        <section id="praktisk_info">
+        <section id="fold-ud">
             <template>
                 <div class="container">
-                    <h2 class="praktisktitle"></h2>
-                    <p class="pratisktekst"></p>
+                    <h2 class="title">
+                        <img src="arrow_down.svg" class="pil">
+                    </h2>
+
+                    <div id="indhold" class="hidden">
+                        <p class="tekst"></p>
+
+                    </div>
                 </div>
             </template>
         </section>
         <div id="billed_container"><img></div>
     </main>
     <footer>
-        <h2>FIND OS HER</h2>
+        <h2 class="footer_cta">FIND OS HER</h2>
         <div id="some_link">
-            <div id="row_1">
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="some_innercontainer1">
+                <div> <a href="https://www.instagram.com/ihsdk/?hl=da"> <img src="soMeIcons/instagram.png"></a></div>
+                <div> <a href="https://www.facebook.com/IdraetshojskolenSonderborg/"> <img src="soMeIcons/facebook.png"></a></div>
+                <div> <a href="https://vimeo.com/channels/1306783"><img src="soMeIcons/vimeo.png"></a></div>
             </div>
-            <div id="row_2">
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="some_innercontainer2">
+                <div> <a href="https://www.youtube.com/channel/UC3_GXsm6rzkw2L8Ni9p5Vlw?view_as=subscriber"><img src="soMeIcons/youtube.png"></a></div>
+                <div><a href="https://www.linkedin.com/company/idraetshojskolensonderborg/"><img src="soMeIcons/linkedin.png"></a></div>
+                <div> <a href="https://www.ihs.dk/blog"><img src="soMeIcons/nyt_blogikon.svg"></a></div>
             </div>
+
         </div>
+
+
         <div id="højskole_trustpilot">
-            <img src="" alt="">
-            <img src="" alt="">
+            <img class="hoejskolerne" src="hoejskolerne.png">
+            <img class="trustpilot" src="trustpilot.png">
         </div>
-        <p>
-            Idrætshøjskolen Sønderborg l Friheds allé 42 l 6400 Sønderborg l (+45) 7442 1848 l CVR 35902619 l info@ihs.dk
-            Bank: Broager Sparekasse l Reg: 9797 Konto: 0001116150 l SWIFT: BRSLDK21 l IBAN: DK2597970001116150
-        </p>
+        <p class="footer_tekst"></p>
     </footer>
     <script src="javascript.js"></script>
     <script>
         let praktiskInfo;
 
-        document.addEventListener("DOMContentLoaded", loadPraktisk);
-
         document.addEventListener("DOMContentLoaded", loadTekst);
+        document.addEventListener("DOMContentLoaded", loadFoldUd);
+
+
 
         async function loadTekst() {
             let url2 = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/pages/404?_embed";
@@ -242,38 +292,48 @@
 
         }
 
-        async function loadPraktisk() {
-            let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/posts/?categories=11";
-            let json = await fetch(url);
-
-            praktisk = await json.json();
-            vis(json);
-        }
-
-
-        let container = document.querySelector("#praktisk_info");
+        let faellesfag;
         let temp = document.querySelector("template");
-        let praktisk;
+        let container = document.querySelector("#fold-ud");
 
-        function vis(pratisk) {
-            console.log("pratiskload");
 
-            praktisk.forEach(praktisk => {
+
+        async function loadFoldUd() {
+            let url = "http://signemariemathiasen.dk/kea/2_sem/09.05.01_ihs/wordpress/wp-json/wp/v2/posts/?categories=11";
+            let jsonData = await fetch(url);
+            faellesfag = await jsonData.json();
+            console.log("LOADING DONE");
+
+            faellesfag.forEach(faellesFag => {
 
                 const klon = temp.cloneNode(true).content;
-                klon.querySelector(".praktisktitle").textContent = praktisk.title.rendered;
-                klon.querySelector(".pratisktekst").innerHTML = praktisk.content.rendered;
+                klon.querySelector(".container .title").innerHTML += faellesFag.title.rendered;
+                klon.querySelector(".tekst").innerHTML = faellesFag.content.rendered;
+                klon.querySelector(".container").addEventListener("click", (e) => toggleContent(e));
 
                 container.appendChild(klon); //klones til DOM
 
             })
+
         }
 
+        function toggleContent(e) {
+            console.log(
+                e.target.parentElement
+            );
+            let valgt = e.target.parentElement;
 
-        function myFunction(x) {
-            x.classList.toggle("change");
-            document.querySelector("nav").classList.toggle("hidden");
-        } //burgerm menu toggle
+            valgt.querySelector("#indhold").classList.toggle("hidden");
+
+            let erSkjult = valgt.querySelector("#indhold").classList.contains("hidden");
+            console.log(erSkjult);
+
+            if (erSkjult == true) {
+                valgt.querySelector(".pil").src = "arrow_down.svg";
+            } else {
+                valgt.querySelector(".pil").src = "arrow_up.svg";
+            }
+        }
     </script>
 
 </body></html>
