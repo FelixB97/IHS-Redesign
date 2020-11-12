@@ -109,6 +109,7 @@ ul {
     padding-bottom: 40px;
 }
 
+
 @media(min-width: 900px) {
     .burger {
         display: none;
@@ -130,14 +131,17 @@ ul {
         display: flex;
     }
 
-    #menu li {
-        width: 200px;
-    }
-
     .hoejskole_dropdown li,
     .andre_tilbud_dropdown li {
         background-color: white;
         padding: 10px;
+        margin-left: 40px;
+        text-align: left;
+        width: 150px;
+    }
+
+    .hoejskole_dropdown {
+        margin-top: 10px;
     }
 
     .hide_hoejskole_dropdown {
@@ -149,6 +153,40 @@ ul {
         text-align: center;
     }
 
+
+    .specialefag_dropdown,
+    .idraetsfag_dropdown,
+    .almenefag_dropdown,
+    .interessefag_dropdown,
+    .faellesfag_dropdown {
+        position: absolute;
+        margin-left: 43px;
+        margin-top: -15px;
+        font-size: 0.7rem;
+        display: none;
+        z-index: 1;
+    }
+
+    .specialefag_dropdown li,
+    .idraetsfag_dropdown li,
+    .almenefag_dropdown li,
+    .interessefag_dropdown li,
+    .faellesfag_dropdown li {
+        padding: 1px;
+        width: 100px;
+    }
+
+    .menu_bredde {
+        width: 200px;
+    }
+
+    .specialefag:hover .specialefag_dropdown,
+    .idraetsfag:hover .idraetsfag_dropdown,
+    .almenefag:hover .almenefag_dropdown,
+    .interessefag:hover .interessefag_dropdown,
+    .faellesfag:hover .faellesfag_dropdown {
+        display: block;
+    }
 
 }
 
