@@ -74,9 +74,15 @@
         /*** tilmelding site ***/
 
 
-        .wp-block-group__inner-container {
+        .pris-indhold .wp-block-group__inner-container {
+            background-color: #87A4CB;
+            padding-bottom: 40px;
+
+        }
+
+        .tilmelding .wp-block-group__inner-container {
             background-color: white;
-            /*            width: 100vw;*/
+
         }
 
 
@@ -87,6 +93,7 @@
         main img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
         }
 
         figure {
@@ -116,10 +123,22 @@
         }
 
         .tilmelding .wp-block-group__inner-container {
-            height: 250px;
+            height: 40vw;
             padding: 15px 30px 10px;
 
+
         }
+
+        /*
+        .pris-indhold {
+        background-color: #87A4CB;
+        }
+*/
+
+        .wp-block-group__inner-container .tilmeldning-indhold {
+            background-color: #87A4CB;
+        }
+
 
         /*****************MEDIAQS*********/
 
@@ -128,27 +147,25 @@
             .tilmeld_section .wp-block-group__inner-container {
                 display: flex;
                 flex-direction: row-reverse;
-                margin-top: 50px;
+                height: 30vw;
             }
 
             .tilmelding .wp-block-group__inner-container {
                 display: block;
-                flex-basis: 50vw;
+                flex-basis: 200px;
                 flex-grow: 1;
-                max-width: 50vw;
-                height: 40vw;
+                height: 30vw;
                 padding: 0;
             }
 
             figure {
-                flex-basis: 50vw;
+                flex-basis: 200px;
                 flex-grow: 1;
-                /* max-width: 73vw; */
-                height: 50vw;
+
             }
 
             .tilmeld_cta {
-                padding-top: 15vw;
+                padding-top: 11vw;
                 font-size: 1.5rem;
             }
 
@@ -175,9 +192,17 @@
                 background-color: #87A4CB;
             }
 
+            .tilmelding .wp-block-group__inner-container {
+                width: 50vw;
 
+            }
+
+            main img {
+                width: 50vw;
+                height: 30vw;
+                object-fit: cover;
+            }
         }
-
     </style>
 
 
@@ -349,12 +374,9 @@
             document.querySelector("#tilmelding").innerHTML = tilmelding.content.rendered;
 
         }
-
     </script>
 
-</body>
-
-</html>
+</body></html>
 <script>
 
 
