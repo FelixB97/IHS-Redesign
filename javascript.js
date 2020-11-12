@@ -6,6 +6,8 @@ function start() {
     loadFooter();
     document.querySelector(".hoejskole").addEventListener("click", visHoejskoleDropdown);
     document.querySelector(".andre_tilbud").addEventListener("click", visAndreTilbudDropdown);
+    document.querySelector("a.hoejskole").addEventListener("click", toggleHoejskoleMenu);
+    document.querySelector("a.andre_tilbud").addEventListener("click", toggleAndreTilbudMenu);
 }
 
 function visHoejskoleDropdown() {
@@ -22,6 +24,30 @@ function visAndreTilbudDropdown() {
 function myFunction(x) {
     x.classList.toggle("change");
     document.querySelector("nav").classList.toggle("hidden_menu");
+}
+
+function toggleHoejskoleMenu() {
+    let erSkjult = document.querySelector(".hoejskole_dropdown").classList.contains("hide_hoejskole_dropdown");
+
+    if (erSkjult == true) {
+        document.querySelector(".hoejskole img").src = "arrow_up_orange.svg";
+
+    } else {
+        document.querySelector(".hoejskole img").src = "arrow_down_orange.svg";
+    }
+
+}
+
+function toggleAndreTilbudMenu() {
+    let erSkjult = document.querySelector(".andre_tilbud_dropdown").classList.contains("hide_hoejskole_dropdown");
+
+    if (erSkjult == true) {
+        document.querySelector(".andre_tilbud img").src = "arrow_up_orange.svg";
+
+    } else {
+        document.querySelector(".andre_tilbud img").src = "arrow_down_orange.svg";
+    }
+
 }
 
 async function loadFooter() {
