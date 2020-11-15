@@ -26,7 +26,7 @@
             margin-inline-end: 0;
         }
 
-        .wp-block-video video {
+        .forsi video {
             width: 100vw;
             height: auto;
         }
@@ -180,7 +180,7 @@
             z-index: 1;
             position: relative;
             top: 166px;
-            left: 335px;
+            left: 96vw;
             /*            display: none;*/
         }
 
@@ -194,6 +194,16 @@
 
             .blocks-gallery-item {
                 transform: translateX(500px);
+            }
+
+            #arrow_left {
+                top: 300px;
+                left: 10px;
+            }
+
+            #arrow_right {
+                top: 250px;
+                /*                left: 464px;*/
             }
         }
 
@@ -235,7 +245,7 @@
 
 
             .overskrift2 {
-                padding: 70px 40px 20px;
+                padding: 5vw 40px 20px;
             }
 
 
@@ -270,8 +280,23 @@
             .blocks-gallery-item {
                 transform: translateX(0);
             }
+
+            #arrow_left {
+                top: 300px;
+                left: 10px;
+            }
+
+            #arrow_right {
+                top: 250px;
+                /*                left: 464px;*/
+            }
         }
 
+        @media(min-width: 900px) {
+            .overskrift2 {
+                padding: 8vw 40px 20px;
+            }
+        }
     </style>
 </head>
 
@@ -453,8 +478,5 @@
 
             document.querySelector("#galleri").innerHTML = forsiden.content.rendered;
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
