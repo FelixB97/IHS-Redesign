@@ -167,6 +167,14 @@ ul {
     display: none;
 }
 
+.soeg {
+    background-image: url(soeg.svg);
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+    margin: 10px;
+}
+
 @media(min-width: 1200px) {
     .burger {
         display: none;
@@ -188,7 +196,7 @@ ul {
 
     #menu {
         margin: -57px 11vw;
-        width: 80vw;
+        width: 81vw;
         display: flex;
         /*        justify-content: space-evenly;*/
     }
@@ -269,6 +277,10 @@ ul {
 
     .arrow_right_orange {
         display: none;
+    }
+
+    .soeg {
+        margin: 17px 10px;
     }
 }
 
