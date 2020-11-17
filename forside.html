@@ -14,6 +14,10 @@
             height: 100%;
         }
 
+        main {
+            overflow: hidden;
+        }
+
         figure {
             display: block;
             margin-block-start: 0;
@@ -22,9 +26,27 @@
             margin-inline-end: 0;
         }
 
+        .forsi video {
+            width: 100vw;
+            height: auto;
+        }
+
+        .forsi .wp-block-group__inner-container h1 {
+            position: absolute;
+            color: white;
+            width: 84vw;
+            font-size: 2rem;
+            text-align: center;
+            top: 31vw;
+            left: 8vw;
+            text-transform: uppercase;
+        }
+
+
+
         .overskrift1 {
             color: #274976;
-            padding: 40px 40px 0;
+            /*            padding: 40px 40px 0;*/
             font-family: vinyl, sans-serif;
             font-weight: 400;
             font-style: normal;
@@ -33,7 +55,7 @@
         }
 
         .overskrift2 {
-            padding: 40px 40px 0;
+            /*            padding: 40px 40px 0;*/
             font-family: vinyl, sans-serif;
             font-weight: 400;
             font-style: normal;
@@ -44,14 +66,16 @@
         .group1 {
             background-color: #87A4CB;
             margin-top: -4px;
+            padding: 5vw 17vw;
         }
 
         .group2 {
             background-color: #274976;
+            padding: 5vw 17vw;
         }
 
         p {
-            padding: 10px 40px 40px;
+            /*            padding: 10px 40px 40px;*/
             color: white;
             font-family: 'Proxima Nova';
         }
@@ -94,19 +118,27 @@
             margin: 70px 0;
         }
 
+        .forside_liste {
+            /*            list-style-type: circle;*/
+            padding: 10px 0px 40px;
+            color: white;
+            font-family: 'Proxima Nova';
+            text-align: center;
+        }
+
         /******************************Galleri**/
 
 
         #galleri_wrapper {
             width: 100vw;
-            height: 300px;
+            height: 117vw;
         }
 
         .blocks-gallery-grid {
             display: flex;
             justify-content: center;
             width: 100vw;
-            height: 250px;
+            height: auto;
             overflow: hidden;
             list-style-type: none;
             margin-block-start: 0;
@@ -134,7 +166,7 @@
             background-size: cover;
             z-index: 1;
             position: relative;
-            top: 170px;
+            top: 214px;
             left: 10px;
             /*            display: none;*/
         }
@@ -147,21 +179,45 @@
             background-size: cover;
             z-index: 1;
             position: relative;
-            top: -130px;
-            left: 335px;
+            top: 166px;
+            left: 96vw;
             /*            display: none;*/
         }
 
 
-
-        /*************************************FOOTER***/
-
-
-
-
-
         /******************************Media**/
+
+        @media(min-width: 500px) {
+            #galleri_wrapper {
+                height: 565px;
+            }
+
+            .blocks-gallery-item {
+                transform: translateX(500px);
+            }
+
+            #arrow_left {
+                top: 300px;
+                left: 10px;
+            }
+
+            #arrow_right {
+                top: 250px;
+                /*                left: 464px;*/
+            }
+        }
+
         @media(min-width: 900px) {
+
+            .forsi .wp-block-group__inner-container h1 {
+                width: 86vw;
+                font-size: 5rem;
+                margin: -8vw auto;
+                /*
+                top: 22vw;
+                left: 7vw;
+*/
+            }
 
             .video_group .wp-block-group__inner-container {
                 display: flex;
@@ -184,16 +240,18 @@
                 flex-grow: 1;
                 max-width: 45vw;
                 height: 36vw;
+                padding: 0 0;
             }
 
-            .overskrift1 {
-                /*                padding: 70px 100px 0;*/
-                padding: 70px 150px 20px;
+
+            .overskrift2 {
+                padding: 5vw 40px 20px;
             }
 
-            .group1 p {
-                /*                padding: 10px 100px 70px;*/
-                padding: 10px 150px 70px;
+
+
+            .group2 p {
+                padding: 10px 40px 40px;
             }
 
             .knapper {
@@ -208,8 +266,37 @@
                 height: 30px;
                 padding: 18px 13px 6px;
             }
+
+            /************GALLERI************/
+
+            .blocks-gallery-item figure {
+                width: 33vw;
+            }
+
+            #galleri_wrapper {
+                height: 37vw;
+            }
+
+            .blocks-gallery-item {
+                transform: translateX(0);
+            }
+
+            #arrow_left {
+                top: 300px;
+                left: 10px;
+            }
+
+            #arrow_right {
+                top: 250px;
+                /*                left: 464px;*/
+            }
         }
 
+        @media(min-width: 900px) {
+            .overskrift2 {
+                padding: 8vw 40px 20px;
+            }
+        }
     </style>
 </head>
 
@@ -337,8 +424,9 @@
 
         <section id="galleri_wrapper">
             <div id="arrow_left"></div>
-            <section id="galleri"></section>
             <div id="arrow_right"></div>
+            <section id="galleri"></section>
+
         </section>
 
     </main>
@@ -390,8 +478,5 @@
 
             document.querySelector("#galleri").innerHTML = forsiden.content.rendered;
         }
-
     </script>
-</body>
-
-</html>
+</body></html>

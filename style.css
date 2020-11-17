@@ -31,7 +31,7 @@ header {
     width: 100%;
     background-color: #FFFFFF;
     margin-top: -40px;
-    z-index: 1;
+    z-index: 2;
 
 }
 
@@ -185,6 +185,7 @@ ul {
         margin: -57px 11vw;
         width: 80vw;
         display: flex;
+        /*        justify-content: space-evenly;*/
     }
 
     .hoejskole_dropdown li,
