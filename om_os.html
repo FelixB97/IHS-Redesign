@@ -41,10 +41,9 @@
         }
 
 
-
         .afsnit_1 {
             background-color: #274976;
-            padding: 5vw 17vw;
+            padding: 7vw 7vw;
         }
 
         .afsnit_1 p {
@@ -54,7 +53,7 @@
 
         .afsnit_2 {
             background-color: #87A4CB;
-            padding: 5vw 7vw;
+            padding: 7vw 7vw;
         }
 
         .afsnit_2 h2 {
@@ -82,7 +81,7 @@
         }
 
         #fold_ud_section {
-            margin: 10vw 10vw;
+            margin: 10vw 3vw;
 
         }
 
@@ -93,7 +92,7 @@
             font-family: vinyl, sans-serif;
             font-weight: 400;
             font-style: normal;
-            font-size: 1.7rem;
+            font-size: 1.5rem;
             text-transform: uppercase;
         }
 
@@ -132,6 +131,12 @@
 
         /*fold ud slut*/
         /*mediaQ*/
+        @media(min-width: 600px) {
+            #fold_ud_section {
+                margin: 10vw 10vw;
+            }
+        }
+
         @media(min-width: 900px) {
             main img {
                 width: 40vw;
@@ -140,6 +145,11 @@
 
             #indhold_2 {
                 flex-wrap: nowrap;
+            }
+
+            .afsnit_1 {
+                background-color: #274976;
+                padding: 5vw 17vw;
             }
         }
 
@@ -160,6 +170,7 @@
         }
 
         /*footer slut*/
+
     </style>
 </head>
 
@@ -393,6 +404,9 @@
 
             document.querySelector(".footer_tekst").innerHTML = forsiden.content.rendered;
         }
+
     </script>
 
-</body></html>
+</body>
+
+</html>
