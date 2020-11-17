@@ -58,7 +58,8 @@ header li {
 }
 
 .logo {
-    margin-left: 40%;
+    left: calc(50vw - 61px);
+    position: relative;
 }
 
 .logo img {
