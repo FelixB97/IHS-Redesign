@@ -129,10 +129,8 @@
         }
 
         .tilmelding .wp-block-group__inner-container {
-            height: 40vw;
+            height: 60vw;
             padding: 15px 30px 10px;
-
-
         }
 
         /*
@@ -147,6 +145,11 @@
 
 
         /*****************MEDIAQS*********/
+        @media(min-width: 600px) {
+            .tilmelding .wp-block-group__inner-container {
+                height: 40vw;
+            }
+        }
 
         @media(min-width: 900px) {
 
@@ -215,7 +218,6 @@
                 object-fit: cover;
             }
         }
-
     </style>
 
 
@@ -390,12 +392,9 @@
             document.querySelector("#tilmelding").innerHTML = tilmelding.content.rendered;
 
         }
-
     </script>
 
-</body>
-
-</html>
+</body></html>
 <script>
 
 
