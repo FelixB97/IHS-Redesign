@@ -57,6 +57,7 @@ header li {
     background-color: #FFFFFF;
 }
 
+
 .logo {
     left: calc(50vw - 61px);
     position: relative;
@@ -193,6 +194,9 @@ ul {
 
     .logo {
         margin: 20px 50px 0;
+        position: relative;
+        left: 2px;
+
     }
 
     #menu {
@@ -434,4 +438,5 @@ footer p {
     #some_link {
         flex-direction: row;
     }
+
 }
