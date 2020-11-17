@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IHS</title>
+    <title>Priser og tilmelding | Idrætshøjkolen</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/mfe4mbx.css">
     <link rel="stylesheet" href="https://use.typekit.net/jkf7dhm.css">
+    <meta name="description" content="her kan du tilmelde dig ihs og finde priser">
     <style>
         body {
             box-sizing: border-box;
@@ -47,9 +48,11 @@
 
         }
 
+
+
         p,
         .ul_rejser {
-            padding: 0px 40px 40px;
+            padding: 10px 20px 30px 40px;
             color: white;
             list-style-type: none;
             font-family: 'Proxima Nova';
@@ -58,7 +61,7 @@
         .tilmeld_cta {
             text-align: center;
             font-weight: 900;
-            padding-top: 60px;
+            padding: 6vh 0 0 0;
         }
 
 
@@ -174,15 +177,21 @@
             }
 
             h1 {
-                padding: 100px 150px 20px;
+                padding: 100px 250px 20px;
 
             }
 
             h3,
             p,
             .ul_rejser {
-                padding: 10px 150px 0;
+                padding: 10px 250px 0;
             }
+
+            p,
+            .ul_rejser {
+                margin-bottom: 25px;
+            }
+
 
             h3 {
                 font-size: 1.7rem;
@@ -203,6 +212,7 @@
                 object-fit: cover;
             }
         }
+
     </style>
 
 
@@ -374,9 +384,12 @@
             document.querySelector("#tilmelding").innerHTML = tilmelding.content.rendered;
 
         }
+
     </script>
 
-</body></html>
+</body>
+
+</html>
 <script>
 
 
