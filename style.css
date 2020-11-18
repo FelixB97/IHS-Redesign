@@ -27,6 +27,14 @@ main {
     margin-top: 40px;
 }
 
+.pil {
+    pointer-events: none;
+}
+
+.container {
+    cursor: pointer;
+}
+
 /* Header styling */
 
 header {
